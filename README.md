@@ -5,7 +5,7 @@
 ### Author: Jacob Dang
 
 ### Problem Domain
-
+In a 4-Phase build, we are supposed to implement and setup a pool of events and handler functions. By building out a hub, creating two client applications, and written unit tests, this phase of the build is meant to demonstrate how event driven applications function
 
 
 ### Links & Resources
