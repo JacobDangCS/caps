@@ -1,12 +1,19 @@
-# LAB - Class 11
+# LAB - Class 12
 
-## Project: CAPs Phase 1
+## Project: CAPS Phase 2
+Phase 2 requires a refactor using Socket.io libraries. Allowing for communication between server and client applications.
+
+The intent here is to build the data services that would drive a suite of applications where we can see pickups and deliveries in real-time.
 
 ### Author: Jacob Dang
 
 ### Problem Domain
-In a 4-Phase build, we are supposed to implement and setup a pool of events and handler functions. By building out a hub, creating two client applications, and written unit tests, this phase of the build is meant to demonstrate how event driven applications function
+Given Phase 1 demonstrated how event handling as well as listening works, 
+Phase 2 seeks to expand upon that idea through refactoring how event listening works using Socket and Socket.Io
 
+
+### Credits
+Credit to instructor Ryan Gallaway for UML
 
 ### Links & Resources
 {GitHub Actions} {URL}
@@ -15,12 +22,13 @@ In a 4-Phase build, we are supposed to implement and setup a pool of events and 
 see '.env.sample'
 
 ### Features/Routes:
-- Event Pools
-- Event Handlers
+- Feature 1: /caps
+- Feature 2: PICKUP, IN-TRANSIT, DELIVERED emits
+
 
 #### Tests
 - How do you run tests?
     - node server.js
 
 ## UML
-![UML](./assets/lab11-image.png)
+![UML](./assets/lab12-image.png)
