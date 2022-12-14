@@ -1,23 +1,22 @@
 'use strict';
+/*
+const eventPool = require('../eventPool');
+const { generateOrder, thankDriver } = require('./handlers');
 
-const eventPool = require('../src/eventPool');
-const Order = require('./order');
-
-eventPool.on('delivered', (order) => {
-    console.log(`Thank you, ${order.customer}`)
-});
-
-
-eventPool.on('new-order', (order) => {
-    setTimeout(() => {
-        eventPool.emit('pickup', order)
-    }, 2000);
-});
+eventPool.on('DELIVERED', thankDriver);
 
 setInterval(() => {
-    let order = new Order();
-    eventPool.emit('new-order', order);
-}, 8000);
+  console.log('-----------new interval begins-----------');
+  generateOrder();
+}, 5000);
+*/
 
-let order = new Order();
-eventPool.emit('new-order', order);
+const { io } = require('socket.io-client');
+const socket = io('http://localhost:3001/caps');
+
+socket.on('DELIVERED', deliverHandler)
+
+function deliverHandler(payload){
+    console.log('VENDOR: Thank you for delivery', payload);
+    socket.emit('VENDOR: order received', payload);
+}
