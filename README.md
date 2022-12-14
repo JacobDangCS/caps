@@ -13,7 +13,7 @@ Phase 2 seeks to expand upon that idea through refactoring how event listening w
 
 
 ### Credits
-Credit to instructor Ryan Gallaway for UML
+Credit to instructor Ryan Gallaway for UML & Code Build
 
 ### Links & Resources
 {GitHub Actions} {URL}
@@ -28,7 +28,7 @@ see '.env.sample'
 
 #### Tests
 - How do you run tests?
-    - node server.js
+    - node server.js, node driver, node vendor
 
 ## UML
 ![UML](./assets/lab12-image.png)
