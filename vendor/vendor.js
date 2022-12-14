@@ -11,12 +11,13 @@ setInterval(() => {
 }, 5000);
 */
 
-const { io } = require('socket.io-client');
-const socket = io('http://localhost:3001/caps');
+let socket = require('../socket-client');
 
-socket.on('DELIVERED', deliverHandler)
+const { generateOrder, thankDriver } = require('./handlers');
 
-function deliverHandler(payload){
-    console.log('VENDOR: Thank you for delivery', payload);
-    socket.emit('VENDOR: order received', payload);
-}
+
+socket.on('DELIVERED', thankDriver)
+
+setInterval(() => {
+  generateOrder(socket)()
+}, 3000);

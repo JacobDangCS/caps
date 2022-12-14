@@ -1,15 +1,15 @@
 'use strict';
 
-const eventPool = require('../eventPool');
+let socket = require('../socket-client');
 
-function pickupInTransit(payload){
-  console.log('Driver: picked up order: ', payload.orderId);
-  eventPool.emit('IN_TRANSIT', payload);
+const pickupInTransit = (socket) = (payload) => {
+  console.log('Driver: picked up order: ', payload);
+  socket.emit('IN_TRANSIT', payload);
 }
 
-function deliveryHandler(payload){
-  console.log('Driver: order delivered: ', payload.orderId);
-  eventPool.emit('DELIVERED', payload);
+const deliveryHandler = (socket) = (payload) => {
+  console.log('Driver: order delivered: ', payload);
+  socket.emit('DELIVERED', payload);
 }
 
 
