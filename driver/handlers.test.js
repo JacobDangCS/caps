@@ -1,7 +1,6 @@
 'use strict';
 
 const { pickupInTransit, deliveryHandler } = require('./handlers');
-//const eventPool = require('../eventPool');
 
 let socket = require('../socket-client');
 
