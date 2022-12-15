@@ -1,7 +1,6 @@
 'use strict';
 
 const { generateOrder, thankDriver } = require('./handlers');
-//const eventPool = require('../eventPool');
 let socket = require('../socket-client');
 
 jest.mock('../socket-client', () => {
