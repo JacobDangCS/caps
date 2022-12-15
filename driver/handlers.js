@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 let socket = require('../socket-client');
 
 const pickupInTransit = (socket) = (payload) => {
@@ -14,3 +15,9 @@ const deliveryHandler = (socket) = (payload) => {
 
 
 module.exports = { pickupInTransit, deliveryHandler };
+*/
+
+module.exports = (socket) => (payload) => {
+  console.log('Message Received!', payload);
+  socket.emit('RECEIVED', payload);
+};
