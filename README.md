@@ -1,15 +1,12 @@
-# LAB - Class 12
+# LAB - Class 13
 
-## Project: CAPS Phase 2
-Phase 2 requires a refactor using Socket.io libraries. Allowing for communication between server and client applications.
-
-The intent here is to build the data services that would drive a suite of applications where we can see pickups and deliveries in real-time.
+## Project: CAPS Phase 3
+Within Phase 2 was implementation of usage of sockets. In Phase 3 there will be implementation of queues. Within queues are methods that are supposed to be used and handlers that will allow for multiple actions to take place at once.
 
 ### Author: Jacob Dang
 
 ### Problem Domain
-Given Phase 1 demonstrated how event handling as well as listening works, 
-Phase 2 seeks to expand upon that idea through refactoring how event listening works using Socket and Socket.Io
+Implementing to both clients specific handlers and refactoring of logic within code. Utilizing rooms and queues to publish and subscribe the vendor and driver clients, this would substitute Phase 2 and make the code more approachable and efficient
 
 
 ### Credits
@@ -22,13 +19,14 @@ Credit to instructor Ryan Gallaway for UML & Code Build
 see '.env.sample'
 
 ### Features/Routes:
-- Feature 1: /caps
-- Feature 2: PICKUP, IN-TRANSIT, DELIVERED emits
+- Vendor Client module: acme-widgets
+- getAll event
+- Subscribe & Publish
 
 
 #### Tests
 - How do you run tests?
-    - node server.js, node driver, node vendor
+    - node server.js & web application
 
 ## UML
-![UML](./assets/lab12-image.png)
+![UML](./assets/lab13-image.png)
