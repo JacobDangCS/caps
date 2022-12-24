@@ -1,13 +1,11 @@
 'use strict';
 
-let socket = require('../socket-client');
+//let socket = require('../socket-client');
 const Chance = require('chance');
 const chance = new Chance();
 
-let callforPickUp = generateOrder(socket);
-callforPickUp(payload);
 
-const generateOrder = (socket) = (payload = null) => {
+const generateOrder = (socket) => (payload = null) => {
   payload = payload ? payload : {
     store: '1-206-flowers',
     orderId: chance.guid(),
@@ -19,6 +17,8 @@ const generateOrder = (socket) = (payload = null) => {
   socket.emit('PICKUP', payload);
 }
 
+//let callforPickUp = generateOrder(socket);
+//callforPickUp(payload);
 
 function thankDriver(payload){
   console.log('Vendor: Thank you for delivering to: ', payload.customer);

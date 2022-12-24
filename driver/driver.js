@@ -16,20 +16,18 @@ function driverHandler(payload){
 */
 
 //const socket = io('http://localhost:3001/caps');
-let socket = require('../socket-client');
+const { io } = require('socket.io-client');
+const socket = io('http://localhost:3001/caps');
 const { pickupInTransit, deliveryHandler } = require('./handlers');
 socket.on('PICKUP', driverHandler);
 
-setInterval(() => {
-  pickupInTransit(socket)()
-}, 3000);
 
 function driverHandler(payload){
   setTimeout(() => {
-    pickupInTransit(payload)
+    pickupInTransit(socket)(payload);
   }, 3000);
 
   setTimeout(() => {
-    deliveryHandler(payload);
+    deliveryHandler(socket)(payload);
   }, 6000);
 }
